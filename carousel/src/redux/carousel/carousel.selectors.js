@@ -12,6 +12,12 @@ export const selectCarouselAsCollection=createSelector(
         return [...array, {name: key,items:data[key]}]
     }, [])
 );
+export const selectCarouselAsCollectionWithKey=createSelector(
+    [selectCarouselData],
+    data => Object.keys(data).reduce((array, key) => {
+        return [...array, {name: key,items:data[key]}]
+    }, [])
+);
 
 export const selectIsCarouselAdding=createSelector(
     [selectCarousel],

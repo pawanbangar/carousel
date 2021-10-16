@@ -12,6 +12,6 @@ export const FetchPhotosByCategory=async ({name,items})=>{
     const{data:{results}} =await axios.get(BASE_URL+name+"&page=1&per_page="+items, {
     });
     return results.map((single)=>{
-        return {id:single.id,urls:single.urls};
+        return {id:single.id,urls:single.urls,rand_id:Math.floor(100000 + Math.random() * 900000)};
     });
 }

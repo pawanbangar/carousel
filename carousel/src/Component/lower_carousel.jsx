@@ -16,8 +16,8 @@ const LowerCarousel = ({carousels}) => {
                         >
                             {carousels.map((item, index) => {
                                 return (<Col lg={2}  key={uuidv4()} index={index}><Draggable
-                                        key={index+1000}
-                                        draggableId={(index+1000).toString()}
+                                        key={uuidv4()}
+                                        draggableId={item.id+1000}
                                         index={index}
                                     >
                                         {(provided, snapshot) => {

@@ -18,7 +18,7 @@ function App({addFile,removeFile,files,carousels}) {
     else if (source.droppableId !== destination.droppableId) {
       if(source.droppableId==="CAROUSEL" && destination.droppableId==="FILES")
       {
-          removeFile(result.draggableId.substring(0, result.draggableId.length-3));
+          removeFile(result.draggableId);
       }else if(source.droppableId==="FILES" && destination.droppableId==="CAROUSEL"){
         addFile(result.draggableId)
       }

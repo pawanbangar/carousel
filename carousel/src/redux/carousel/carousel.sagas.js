@@ -3,11 +3,12 @@ import {AddAllFilesSuccess,AddAllFilesFailure,AddSingleFileFailure,RemoveSingleF
 import {selectCarouselData} from "./carousel.selectors";
 import {selectFilesData} from "../file/file.selectors";
 import CarouselActionTypes from "./carousel.types";
-import data from "../../data/dummy";
 
 export function* addAllFiles({payload}){
 
     try{
+        //First 8 elements
+        payload.slice(0,8);
        yield put(AddAllFilesSuccess(payload));
     }catch(error){
         yield put(AddAllFilesFailure(error.message));
@@ -20,6 +21,7 @@ export function* addSingleFile({payload}){
         const files=yield select(selectFilesData);
         const carousels=yield select(selectCarouselData);
         const file=files.filter((single)=>single.id===payload)[0];
+        file.id=Math.floor(100000 + Math.random() * 900000);
       yield put(AddSingleFilesSuccess([...carousels,file]));
     }catch(error){
         yield put(AddAllFilesFailure(error.message));
@@ -30,13 +32,16 @@ export function* removeSingleFile({payload}){
 
     try{
         const carousels=yield select(selectCarouselData);
-        const id=carousels[parseInt(payload)].id;
-        carousels.splice(payload, 1)
-      yield put(RemoveSingleFileSuccess(carousels));
+        if(carousels.length>1){
+            const id=carousels[parseInt(payload)].id;
+            carousels.splice(payload, 1)
+            yield put(RemoveSingleFileSuccess(carousels));
+        }else{
+            yield put(AddAllFilesFailure("Only 1 Image is in the carousel"));
+        }
     }catch(error){
         yield put(AddAllFilesFailure(error.message));
     }
-
 }
 
 export function* AddAllFilesStart(){

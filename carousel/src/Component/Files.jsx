@@ -2,39 +2,9 @@ import React, {useState} from 'react';
 import {Container, ListGroup} from 'react-bootstrap'
 import {connect} from 'react-redux';
 import {selectFilesData} from "../redux/file/file.selectors";
-import {DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd';
-import {v4 as uuidv4} from 'uuid';
-// fake data generator
-const getItems = (count, offset = 0) =>
-    Array.from({length: count}, (v, k) => k).map(k => ({
-        id: `item-${k + offset}-${new Date().getTime()}`,
-        content: `item ${k + offset}`
-    }));
+import { Droppable, Draggable} from 'react-beautiful-dnd';
+import { v1 as uuidv1 } from 'uuid';
 
-const reorder = (list, startIndex, endIndex) => {
-    const result = Array.from(list);
-    const [removed] = result.splice(startIndex, 1);
-    result.splice(endIndex, 0, removed);
-
-    return result;
-};
-
-/**
- * Moves an item from one list to another list.
- */
-const move = (source, destination, droppableSource, droppableDestination) => {
-    const sourceClone = Array.from(source);
-    const destClone = Array.from(destination);
-    const [removed] = sourceClone.splice(droppableSource.index, 1);
-
-    destClone.splice(droppableDestination.index, 0, removed);
-
-    const result = {};
-    result[droppableSource.droppableId] = sourceClone;
-    result[droppableDestination.droppableId] = destClone;
-
-    return result;
-};
 const grid = 1;
 
 const getItemStyle = (isDragging, draggableStyle) => ({
@@ -70,8 +40,8 @@ const Files = ({files}) => {
                                 {files.map((item, index) => {
                                     return (
                                         <Draggable
-                                            key={item.id}
-                                            draggableId={item.id}
+                                            key={item.rand_id.toString()}
+                                            draggableId={item.rand_id.toString()}
                                             index={index}
                                         >
                                             {(provided, snapshot) => {
