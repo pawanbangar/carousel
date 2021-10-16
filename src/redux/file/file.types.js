@@ -1,6 +1,0 @@
-const FilesActionTypes={
-    FETCH_FILES_START:'FETCH_FILES_START',
-    FETCH_FILES_SUCCESS:'FETCH_FILES_SUCCESS',
-    FETCH_FILES_FAILURE:'FETCH_FILES_FAILURE'
-};
-export default FilesActionTypes;

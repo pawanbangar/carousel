@@ -1,0 +1,4 @@
+{
+	"mongoURI": "mongodb+srv://medico_user:oycXBR6BaL5EL85q@cluster0.ik5bg.gcp.mongodb.net/mediconf?retryWrites=true&w=majority",
+	"jwtSecret": "mysecrettoken"
+}

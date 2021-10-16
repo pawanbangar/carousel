@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/carousel.iml" filepath="$PROJECT_DIR$/.idea/carousel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Novolytics.iml" filepath="$PROJECT_DIR$/.idea/Novolytics.iml" />
     </modules>
   </component>
 </project>

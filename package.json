@@ -1,51 +1,60 @@
 {
-  "name": "carousel",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "bootstrap": "^5.1.1",
-    "react": "^17.0.2",
-    "react-beautiful-dnd": "^13.1.0",
-    "react-bootstrap": "^2.0.0-rc.0",
-    "react-dom": "^17.0.2",
-    "react-redux": "^7.2.5",
-    "react-scripts": "4.0.3",
-    "redux": "^4.1.1",
-    "redux-logger": "^3.0.6",
-    "redux-persist": "^6.0.0",
-    "redux-saga": "^1.1.3",
-    "unsplash-js": "^7.0.15",
-    "uuid": "^8.3.2",
-    "web-vitals": "^1.1.2"
-  },
+  "name": "medicon",
+  "version": "1.0.0",
+  "description": "Conference Application for medicals",
+  "main": "server.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "npm start --prefix carousel",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msmITServices/medicon.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "Pawan Bangar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/msmITServices/medicon/issues"
+  },
+  "homepage": "https://github.com/msmITServices/medicon#readme",
+  "dependencies": {
+    "@google-cloud/storage": "^5.2.0",
+    "bcryptjs": "^2.4.3",
+    "canvas-designer": "latest",
+    "config": "^3.3.1",
+    "cors": "^2.8.5",
+    "detectrtc": "latest",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.1.3",
+    "express-validator": "^6.6.1",
+    "fbr": "latest",
+    "getstats": "latest",
+    "gravatar": "^1.8.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.0",
+    "multistreamsmixer": "latest",
+    "node-fetch": "^3.0.0",
+    "recordrtc": "latest",
+    "rtcmulticonnection": "^3.7.0",
+    "rtcmulticonnection-server": "^1.3.2",
+    "socket.io": "^2.3.0",
+    "webrtc-adapter": "latest"
   },
   "devDependencies": {
-    "reselect": "^4.0.0"
+    "concurrently": "^5.3.0",
+    "grunt": "0.4.5",
+    "grunt-bump": "0.7.0",
+    "grunt-cli": "0.1.13",
+    "grunt-contrib-clean": "0.6.0",
+    "grunt-contrib-concat": "0.5.1",
+    "grunt-contrib-copy": "0.8.2",
+    "grunt-contrib-uglify": "0.11.0",
+    "grunt-contrib-watch": "1.1.0",
+    "grunt-jsbeautifier": "0.2.10",
+    "grunt-replace": "0.11.0",
+    "load-grunt-tasks": "3.4.0"
   }
 }
