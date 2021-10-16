@@ -21,9 +21,9 @@ export const selectOnlyCategories=createSelector(
     }, [])
 )
 
-export const selectIsCategorysFetching=createSelector(
-    [selectCategory],
-    category=>category.isFetching
+export const selectFirstCategory=createSelector(
+    [selectCategoriesAsCollection],
+    categories=>categories[0]
 );
 export const selectisCategoriesLoading=createSelector(
     [selectCategory],

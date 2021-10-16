@@ -57,7 +57,6 @@ const getListStyle = isDraggingOver => ({
 
 
 const Files = ({files}) => {
-    const [fileData, setFiles] = useState(files);
     return (
         <Container className="mt-3">
             <h5>Files</h5>
@@ -68,7 +67,7 @@ const Files = ({files}) => {
                                 ref={provided.innerRef}
                                 style={getListStyle(snapshot.isDraggingOver)}
                             >
-                                {fileData.map((item, index) => {
+                                {files.map((item, index) => {
                                     return (
                                         <Draggable
                                             key={item.id}

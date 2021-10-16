@@ -2,7 +2,7 @@ import FilesActionTypes from "./file.types";
 
 export const fetchFilesStart=(category)=>({
     type:FilesActionTypes.FETCH_FILES_START,
-    category:category
+    payload:category
 });
 
 export const fetchFilesSuccess=collectionMap=>({

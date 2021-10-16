@@ -12,7 +12,7 @@ app.use(express.json({ extended: false }));
 
 //defines routes
 app.get("/", (req, res) => res.send("API Running"));
-app.use("/api/carousel", require("./routes/api/carousel"));
+app.use("/api/category", require("./routes/api/category"));
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log("Server Started"));
