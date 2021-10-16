@@ -40,6 +40,12 @@ const CarouselReducer=(state=INITIAL_STATE,action)=>{
                 isAdding:false,
                 files:action.payload
             }
+        case CarouselActionTypes.REMOVE_SINGLE_FILE_SUCCESS:
+            return{
+                ...state,
+                isAdding:false,
+                files:action.payload
+            }
         default:
             return state;
     }

@@ -4,7 +4,6 @@ import {fetchCategoriesStart} from "../redux/category/category.actions";
 import {fetchFilesStart} from "../redux/file/file.actions";
 import {connect} from 'react-redux';
 import {selectOnlyCategories} from "../redux/category/category.selectors";
-
 const Categories = ({fetchCategoriesStart,categories,fetchFiles}) => {
     useEffect(()=>{
         fetchCategoriesStart();
@@ -12,6 +11,7 @@ const Categories = ({fetchCategoriesStart,categories,fetchFiles}) => {
     const changedCategory=(event)=>{
         fetchFiles(event.target.value);
     }
+
     return (
         <Container>
             <h5>Categories</h5>

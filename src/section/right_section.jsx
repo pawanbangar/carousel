@@ -1,13 +1,12 @@
-import {Col} from "react-bootstrap";
-import Categories from "../Component/Categories";
+import {Col, ListGroup} from "react-bootstrap";
 import React from "react";
 import LowerCarousel from "../Component/lower_carousel";
 import MainCarousel from "../Component/main_carousel";
 
-const RightSection=()=>{
+const RightSection=(props)=>{
     return (<Col xs lg="9">
         <MainCarousel/>
-<LowerCarousel/>
+        <LowerCarousel/>
     </Col>);
 }
 export default RightSection;

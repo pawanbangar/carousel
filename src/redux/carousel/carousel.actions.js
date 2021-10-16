@@ -15,9 +15,9 @@ export const AddAllFilesFailure=message=>({
     payload:message
 });
 
-export const AddSingleFiles=(files)=>({
+export const AddSingleFile=(data)=>({
     type:CarouselActionTypes.ADD_SINGLE_FILE_START,
-    files:files
+    payload:data
 });
 
 // Add Single File
@@ -32,12 +32,12 @@ export const AddSingleFileFailure=message=>({
 });
 
 // Remove Single File
-export const RemoveSingleFiles=(files)=>({
-    type:CarouselActionTypes.ADD_SINGLE_FILE_START,
-    files:files
+export const RemoveSingleFile=(data)=>({
+    type:CarouselActionTypes.REMOVE_SINGLE_FILE_START,
+    payload:data
 });
 
-export const RemoveSingleFilesSuccess=data=>({
+export const RemoveSingleFileSuccess=data=>({
     type:CarouselActionTypes.ADD_SINGLE_FILE_SUCCESS,
     payload:data
 });
