@@ -12,7 +12,6 @@ const filesReducer=(state=INITIAL_STATE,action)=>{
             return{
                 ...state,
                 errorMessage: undefined,
-                category: action.category,
                 isFetching:true
             }
         case FilesActionTypes.FETCH_FILES_SUCCESS:

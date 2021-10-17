@@ -47,19 +47,3 @@ export const RemoveSingleFileFailure=message=>({
     type:CarouselActionTypes.ADD_ALL_FILES_FAILURE,
     payload:message
 });
-
-// Select Carousel Slide
-export const SelectcarouselSlideStart=(data)=>({
-    type:CarouselActionTypes.SELECT_CAROUSEL_INDEX_START,
-    payload:data
-});
-
-export const SelectcarouselSlideSuccess=data=>({
-    type:CarouselActionTypes.SELECT_CAROUSEL_INDEX_SUCCESS,
-    payload:data
-});
-
-export const SelectcarouselSlideFailure=message=>({
-    type:CarouselActionTypes.SELECT_CAROUSEL_INDEX_FAILURE,
-    payload:message
-});

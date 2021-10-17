@@ -8,12 +8,10 @@ export function* addAllFiles({payload,first}){
 
     try{
         if(first){
-            // const data=payload.splice(0,8);
-           // console.log(payload);
             //only first 8 elements
-            yield put(AddAllFilesSuccess(payload));
+            yield put(AddAllFilesSuccess(payload.slice(0,8)));
         }else{
-          //  yield put(AddAllFilesSuccess(payload));
+            yield put(AddAllFilesSuccess(payload));
         }
     }catch(error){
         yield put(AddAllFilesFailure(error.message));
@@ -24,12 +22,13 @@ export function* addSingleFile({payload}){
 
     try{
         const files=yield select(selectFilesData);
+        console.log(files);
         const carousels=yield select(selectCarouselData);
-        let file=files.filter((single)=>single.rand_id===parseInt(payload))[0];
-        let removedFileData=carousels.filter((single)=>single.rand_id!==parseInt(payload));
+        console.log(carousels);
+        let file=files.filter((single)=>single.rand_id==parseInt(payload))[0];
         file.id=(Math.floor(100000 + Math.random() * 900000)).toString()+file.id;
         file.rand_id=(Math.floor(100000 + Math.random() * 900000));
-      yield put(AddSingleFilesSuccess([...removedFileData,file]));
+      yield put(AddSingleFilesSuccess([...carousels,file]));
     }catch(error){
         yield put(AddSingleFileFailure(error.message));
     }
@@ -55,7 +54,7 @@ export function* AddAllFilesStart(){
         addAllFiles
     );
 }
-export function* AddSingleFileStart(){
+export function* addSingleFileStart(){
     yield takeLatest(
         CarouselActionTypes.ADD_SINGLE_FILE_START,
         addSingleFile
@@ -69,5 +68,5 @@ export function* RemoveSingleFileStart(){
 }
 
 export function* CarouselSagas(){
-    yield all([call(AddAllFilesStart),call(AddSingleFileStart),call(RemoveSingleFileStart)])
+    yield all([call(AddAllFilesStart),call(addSingleFileStart),call(RemoveSingleFileStart)])
 }
