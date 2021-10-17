@@ -18,7 +18,6 @@ export function* setupFiles({payload}) {
         const firstcategory=Object.keys(payload)[0];
         yield put(fetchFilesStart(firstcategory));
     }catch(error){
-        console.log(error);
         yield put(fetchCategoriesFailure(error.message));
     }
 }

@@ -6,10 +6,8 @@ import LeftSection from "./section/left_section";
 import RightSection from "./section/right_section";
 import {DragDropContext} from "react-beautiful-dnd";
 import {AddSingleFile,RemoveSingleFile} from "./redux/carousel/carousel.actions";
-import {selectCarouselData} from './redux/carousel/carousel.selectors';
-import {selectFilesData} from './redux/file/file.selectors';
 import {connect} from "react-redux";
-function App({addFile,removeFile,files,carousels}) {
+function App({addFile,removeFile}) {
   function onDragEnd(result) {
     const {source, destination} = result;
     // dropped outside the list
@@ -50,9 +48,5 @@ const mapDispatchToProps=dispatch=>({
   removeFile:(file)=>dispatch(RemoveSingleFile(file))
 });
 
-const mapStateToProps = state => ({
-  files: selectFilesData(state),
-  carousels: selectCarouselData(state)
-});
 
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default connect(null,mapDispatchToProps)(App);

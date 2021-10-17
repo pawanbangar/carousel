@@ -2,7 +2,6 @@ import FilesActionTypes from "./file.types";
 
 const INITIAL_STATE={
     files:[],
-    category:"",
     isFetching:false,
     errorMessage:undefined
 };
@@ -18,7 +17,6 @@ const filesReducer=(state=INITIAL_STATE,action)=>{
             }
         case FilesActionTypes.FETCH_FILES_SUCCESS:
             return{
-                ...state,
                 isFetching:false,
                 errorMessage: undefined,
                 files:action.payload

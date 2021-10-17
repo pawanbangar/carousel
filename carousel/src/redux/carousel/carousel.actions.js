@@ -1,8 +1,9 @@
 import CarouselActionTypes from "./carousel.types";
 
-export const AddAllFilesStart=(files)=>({
+export const AddAllFilesStart=(files,first=false)=>({
     type:CarouselActionTypes.ADD_ALL_FILES_START,
-    payload:files
+    payload:files,
+    first:first
 });
 
 export const AddAllFilesSuccess=collectionMap=>({
@@ -38,7 +39,7 @@ export const RemoveSingleFile=(data)=>({
 });
 
 export const RemoveSingleFileSuccess=data=>({
-    type:CarouselActionTypes.ADD_SINGLE_FILE_SUCCESS,
+    type:CarouselActionTypes.REMOVE_SINGLE_FILE_SUCCESS,
     payload:data
 });
 

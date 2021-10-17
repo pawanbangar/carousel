@@ -13,21 +13,3 @@ export const fetchCategoriesFailure=message=>({
     type:CategoryActionTypes.FETCH_CATEGORIES_FAILURE,
     payload:message
 });
-
-export const fetchCategoriesStartAsync=()=>{
-    return dispatch=>{
-        dispatch(fetchCategoriesStart());
-        dispatch(fetchCategoriesSuccess({
-            house:8,
-            home:10,
-            vehicle:7,
-            nature:9,
-            fashion:4,
-            plant:8,
-            outdoor:9,
-            bag:8,
-            sport:9,
-            blue:10
-        }));
-    }
-}

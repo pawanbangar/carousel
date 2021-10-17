@@ -16,9 +16,9 @@ export const selectCategoriesAsCollection=createSelector(
 
 export const selectOnlyCategories=createSelector(
     [selectCategories],
-    data => Object.keys(data).reduce((array, key) => {
+    data => data?Object.keys(data).reduce((array, key) => {
         return [...array, key]
-    }, [])
+    }, []):[]
 )
 
 export const selectFirstCategory=createSelector(

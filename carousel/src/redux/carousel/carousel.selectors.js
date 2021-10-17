@@ -4,7 +4,7 @@ const selectCarousel = state => state.carousel;
 
 export const selectCarouselData = createSelector(
     [selectCarousel],
-    carousel => carousel.files
+    carousel => carousel.data
 );
 
 export const selectCarouselAsCollection = createSelector(

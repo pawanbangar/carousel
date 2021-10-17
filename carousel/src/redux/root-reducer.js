@@ -14,4 +14,4 @@ const rootReducer=combineReducers({
     file:filesReducer,
     carousel:CarouselReducer
 });
-export default persistReducer(persistConfig,rootReducer);
+export default rootReducer;

@@ -1,7 +1,7 @@
 import CarouselActionTypes from "./carousel.types";
 
 const INITIAL_STATE={
-    files:[],
+    data:[],
     selected:0,
     isAdding:false,
     errorMessage:undefined
@@ -20,7 +20,7 @@ const CarouselReducer=(state=INITIAL_STATE,action)=>{
                 ...state,
                 isAdding:false,
                 errorMessage: undefined,
-                files:action.payload
+                data:action.payload
             }
         case CarouselActionTypes.ADD_ALL_FILES_FAILURE:
             return{
@@ -38,13 +38,13 @@ const CarouselReducer=(state=INITIAL_STATE,action)=>{
             return{
                 ...state,
                 isAdding:false,
-                files:action.payload
+                data:action.payload
             }
         case CarouselActionTypes.REMOVE_SINGLE_FILE_SUCCESS:
             return{
                 ...state,
                 isAdding:false,
-                files:action.payload
+                data:action.payload
             }
         default:
             return state;
