@@ -1,25 +1,20 @@
 {
-  "name": "medicon",
+  "name": "carousel-server",
   "version": "1.0.0",
-  "description": "Conference Application for medicals",
+  "description": "Server For Carousel",
   "main": "server.js",
   "scripts": {
     "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix carousel",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "setup": "\"npm install --prefix carousel -g nodemon\""
+    "setup": "(cd carousel && npm install) & (npm install && npm install -g nodemon)"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/msmITServices/medicon.git"
+    "type": "git"
   },
   "author": "Pawan Bangar",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/msmITServices/medicon/issues"
-  },
-  "homepage": "https://github.com/msmITServices/medicon#readme",
   "dependencies": {
     "config": "^3.3.1",
     "cors": "^2.8.5",

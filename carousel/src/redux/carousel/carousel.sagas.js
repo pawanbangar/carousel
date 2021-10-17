@@ -33,9 +33,7 @@ export function* removeSingleFile({payload}){
     try{
         const carousels=yield select(selectCarouselData);
         if(carousels.length>1){
-            const id=carousels[parseInt(payload)].id;
-            carousels.splice(payload, 1)
-            yield put(RemoveSingleFileSuccess(carousels));
+            yield put(RemoveSingleFileSuccess(carousels.filter(single=>single.id!==payload)));
         }else{
             yield put(AddAllFilesFailure("Only 1 Image is in the carousel"));
         }
