@@ -7,7 +7,6 @@ import {FetchPhotosByCategory} from "../../api/apis";
 
 
 function* fetchCollectionsAsync({payload}){
-
     try{
          const categories=yield select(selectCategoriesAsCollection);
          const data=yield FetchPhotosByCategory(categories.filter(category=>category.name===payload)[0]);

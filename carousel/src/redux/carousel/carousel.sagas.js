@@ -8,11 +8,12 @@ export function* addAllFiles({payload,first}){
 
     try{
         if(first){
-            const data=payload.splice(0,8);
+            // const data=payload.splice(0,8);
+           // console.log(payload);
             //only first 8 elements
-            yield put(AddAllFilesSuccess(data));
-        }else{
             yield put(AddAllFilesSuccess(payload));
+        }else{
+          //  yield put(AddAllFilesSuccess(payload));
         }
     }catch(error){
         yield put(AddAllFilesFailure(error.message));
