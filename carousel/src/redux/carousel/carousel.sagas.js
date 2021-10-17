@@ -20,11 +20,11 @@ export function* addSingleFile({payload}){
     try{
         const files=yield select(selectFilesData);
         const carousels=yield select(selectCarouselData);
-        const file=files.filter((single)=>single.id===payload)[0];
+        const file=files.filter((single)=>single.rand_id===parseInt(payload))[0];
         file.id=Math.floor(100000 + Math.random() * 900000);
       yield put(AddSingleFilesSuccess([...carousels,file]));
     }catch(error){
-        yield put(AddAllFilesFailure(error.message));
+        yield put(AddSingleFileFailure(error.message));
     }
 
 }

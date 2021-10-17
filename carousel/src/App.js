@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css"
-import {Container, ListGroup, Navbar, Row} from "react-bootstrap";
+// eslint-disable-next-line no-unused-vars
+import {Container, Navbar, Row} from "react-bootstrap";
 import LeftSection from "./section/left_section";
 import RightSection from "./section/right_section";
 import {DragDropContext} from "react-beautiful-dnd";
@@ -13,7 +14,7 @@ function App({addFile,removeFile,files,carousels}) {
     const {source, destination} = result;
     // dropped outside the list
     if (!destination) {
-
+      return
     }
     else if (source.droppableId !== destination.droppableId) {
       if(source.droppableId==="CAROUSEL" && destination.droppableId==="FILES")

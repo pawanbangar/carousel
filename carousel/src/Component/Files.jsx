@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Container, ListGroup} from 'react-bootstrap'
 import {connect} from 'react-redux';
 import {selectFilesData} from "../redux/file/file.selectors";
 import { Droppable, Draggable} from 'react-beautiful-dnd';
-import { v1 as uuidv1 } from 'uuid';
 
 const grid = 1;
 

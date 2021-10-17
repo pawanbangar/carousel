@@ -1,4 +1,4 @@
-import {Col, ListGroup} from "react-bootstrap";
+import {Col} from "react-bootstrap";
 import React from "react";
 import LowerCarousel from "../Component/lower_carousel";
 import MainCarousel from "../Component/main_carousel";
